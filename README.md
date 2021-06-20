@@ -12,9 +12,9 @@ A execução é a mesma tanto para windows quanto para linux. Na linha de comand
 ```
 
 Os parâmetros entre <> são parâmetros obrigatórios. 
-- <arquivo.json> - este arquivo JSON deverá seguir um padrão que está representado na seção abaixo e deverá conter o grafo no qual se deseja executar o algoritmo
-- <verticeOrigen> - este parâmetro deverá conter o nome do vértice de origem que deve ser idêntico ao ome do vértice no arquivo .JSON
-- <algoritmo> - este parâmetro deverá conter qual algoritmo se deseja executar. Atualmente ele possui duas opções: `dijkstra` ou `bellman_ford`
+- <arquivo.json> - este arquivo JSON deverá seguir um padrão que está representado na seção abaixo e deverá conter o grafo no qual se deseja executar o algoritmo;
+- <verticeOrigem> - este parâmetro deverá conter o nome do vértice de origem que deve ser idêntico ao ome do vértice no arquivo .JSON;
+- <algoritmo> - este parâmetro deverá conter qual algoritmo se deseja executar. Atualmente ele possui duas opções: `dijkstra` ou `bellman_ford`.
 ---
 ### JSON
 O algoritmo usa como base um arquivo JOSN para compor o grafo, portanto ele deve segui um padrão.
@@ -35,6 +35,6 @@ O algoritmo usa como base um arquivo JOSN para compor o grafo, portanto ele deve
 }
 ```
 
-- No campo de `vertices` deverão ser listados todos os vértices do grafo com seus respectivos nomes.
-- No campo `arestasNaoDirecionadas` deverão ser inseridas todas as arestas não direcionadas do grafo com atenção aos campos `vertice1` e `vertice2` que deverão conter os nomes exatos dos vértices.
+- No campo de `vertices` deverão ser listados todos os vértices do grafo com seus respectivos nomes;
+- No campo `arestasNaoDirecionadas` deverão ser inseridas todas as arestas não direcionadas do grafo com atenção aos campos `vertice1` e `vertice2` que deverão conter os nomes exatos dos vértices;
 - No campo `arestasDirecionadas` deverão ser isneridas as arestas direcioandsa do grafo com atenção aos campos `origem` e `destino` que deverão conter os nomes extaos dos vértices e por serem arestas orientadas os vértices inseridos nesses campos devem correpsonder com o grafo original.
