@@ -1,0 +1,25 @@
+{
+    "vertices": [
+        {"nome": "a"},
+        {"nome": "b"},
+        {"nome": "c"},
+        {"nome": "d"},
+        {"nome": "e"},
+        {"nome": "f"},
+        {"nome": "g"},
+        {"nome": "h"}
+    ],
+    "arestasNaoDirecionadas": [
+        {"nome": "a0", "vertice1": "a", "vertice2": "c", "peso": 5},
+        {"nome": "a1", "vertice1": "b", "vertice2": "c", "peso": 10},
+        {"nome": "a2", "vertice1": "c", "vertice2": "d", "peso": 7},
+        {"nome": "a3", "vertice1": "b", "vertice2": "f", "peso": 7},
+        {"nome": "a4", "vertice1": "c", "vertice2": "f", "peso": 1},
+        {"nome": "a5", "vertice1": "b", "vertice2": "e", "peso": 8},
+        {"nome": "a6", "vertice1": "d", "vertice2": "g", "peso": 6},
+        {"nome": "a7", "vertice1": "e", "vertice2": "f", "peso": 8},
+        {"nome": "a8", "vertice1": "f", "vertice2": "g", "peso": 5},
+        {"nome": "a9", "vertice1": "f", "vertice2": "h", "peso": 4}
+    ], 
+    "arestasDirecionadas": []
+}

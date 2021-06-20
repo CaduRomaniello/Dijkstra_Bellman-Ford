@@ -1,0 +1,43 @@
+{
+    "vertices": [
+        {"nome": "a"},
+        {"nome": "b"},
+        {"nome": "c"},
+        {"nome": "d"},
+        {"nome": "e"},
+        {"nome": "f"},
+        {"nome": "g"},
+        {"nome": "h"},
+        {"nome": "i"},
+        {"nome": "j"},
+        {"nome": "l"},
+        {"nome": "m"}
+    ],
+    "arestasNaoDirecionadas": [
+        {"nome": "aresta 0", "vertice1": "a", "vertice2": "b", "peso": 61},
+        {"nome": "aresta 1", "vertice1": "a", "vertice2": "d", "peso": 42},
+        {"nome": "aresta 2", "vertice1": "a", "vertice2": "c", "peso": 50},
+        {"nome": "aresta 3", "vertice1": "b", "vertice2": "j", "peso": 17},
+        {"nome": "aresta 4", "vertice1": "b", "vertice2": "f", "peso": 29},
+        {"nome": "aresta 5", "vertice1": "b", "vertice2": "d", "peso": 32},
+        {"nome": "aresta 6", "vertice1": "c", "vertice2": "d", "peso": 56},
+        {"nome": "aresta 7", "vertice1": "c", "vertice2": "e", "peso": 67},
+        {"nome": "aresta 8", "vertice1": "d", "vertice2": "e", "peso": 45},
+        {"nome": "aresta 9", "vertice1": "d", "vertice2": "g", "peso": 85},
+        {"nome": "aresta 10", "vertice1": "d", "vertice2": "f", "peso": 62},
+        {"nome": "aresta 11", "vertice1": "j", "vertice2": "f", "peso": 30},
+        {"nome": "aresta 12", "vertice1": "j", "vertice2": "l", "peso": 30},
+        {"nome": "aresta 13", "vertice1": "f", "vertice2": "l", "peso": 45},
+        {"nome": "aresta 14", "vertice1": "f", "vertice2": "g", "peso": 20},
+        {"nome": "aresta 15", "vertice1": "e", "vertice2": "g", "peso": 72},
+        {"nome": "aresta 16", "vertice1": "e", "vertice2": "i", "peso": 73},
+        {"nome": "aresta 17", "vertice1": "f", "vertice2": "h", "peso": 35},
+        {"nome": "aresta 18", "vertice1": "g", "vertice2": "h", "peso": 40},
+        {"nome": "aresta 19", "vertice1": "g", "vertice2": "i", "peso": 60},
+        {"nome": "aresta 20", "vertice1": "l", "vertice2": "h", "peso": 50},
+        {"nome": "aresta 21", "vertice1": "g", "vertice2": "m", "peso": 32},
+        {"nome": "aresta 22", "vertice1": "h", "vertice2": "m", "peso": 21},
+        {"nome": "aresta 23", "vertice1": "i", "vertice2": "m", "peso": 50}
+    ], 
+    "arestasDirecionadas": []
+}
