@@ -12,12 +12,12 @@ A execução é a mesma tanto para windows quanto para linux. Na linha de comand
 ```
 
 Os parâmetros entre <> são parâmetros obrigatórios. 
-- <arquivo.json> - este arquivo JSON deverá seguir um padrão que está representado na seção abaixo e deverá conter o grafo no qual se deseja executar o algoritmo;
-- <verticeOrigem> - este parâmetro deverá conter o nome do vértice de origem que deve ser idêntico ao ome do vértice no arquivo .JSON;
-- <algoritmo> - este parâmetro deverá conter qual algoritmo se deseja executar. Atualmente ele possui duas opções: `dijkstra` ou `bellman_ford`.
+- arquivo.json - este arquivo JSON deverá seguir um padrão que está representado na seção abaixo e deverá conter o grafo no qual se deseja executar o algoritmo;
+- verticeOrigem - este parâmetro deverá conter o nome do vértice de origem que deve ser idêntico ao ome do vértice no arquivo .JSON;
+- algoritmo - este parâmetro deverá conter qual algoritmo se deseja executar. Atualmente ele possui duas opções: `dijkstra` ou `bellman_ford`.
 ---
 ### JSON
-O algoritmo usa como base um arquivo JOSN para compor o grafo, portanto ele deve segui um padrão.
+O algoritmo usa como base um arquivo JOSN para compor o grafo, portanto ele deve segui o seguinte padrão.
 
 ```JSON
 {
