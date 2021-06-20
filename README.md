@@ -1,8 +1,10 @@
-# Dijkstra & Bellman-Ford #
+# Dijkstra & Bellman-Ford
 Neste repositório está presente os algoritmos de Dijkstra e Bellman-Ford implementados em Julia.
+
 ---
-### Requisitos ###
+### Requisitos 
 Para poder executar o programa em sua máquina será necessário realizar o download do compilador de [Julia](https://julialang.org/downloads/)
+
 ---
 ### Execução ###
 A execução é a mesma tanto para windows quanto para linux. Na linha de comando será necessário passar 3 parâmetros
