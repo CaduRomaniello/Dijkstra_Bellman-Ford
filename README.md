@@ -2,11 +2,11 @@
 Neste repositório está presente os algoritmos de Dijkstra e Bellman-Ford implementados em Julia.
 
 ---
-### Requisitos 
+## Requisitos 
 Para poder executar o programa em sua máquina será necessário realizar o download do compilador de [Julia](https://julialang.org/downloads/)
 
 ---
-### Execução ###
+## Execução
 A execução é a mesma tanto para windows quanto para linux. Na linha de comando será necessário passar 3 parâmetros
 
 ```bash
@@ -18,7 +18,7 @@ Os parâmetros entre <> são parâmetros obrigatórios.
 - **verticeOrigem** - este parâmetro deverá conter o nome do vértice de origem que deve ser idêntico ao ome do vértice no arquivo .JSON;
 - **algoritmo** - este parâmetro deverá conter qual algoritmo se deseja executar. Atualmente ele possui duas opções: `dijkstra` ou `bellman_ford`.
 ---
-### JSON ###
+## JSON
 O algoritmo usa como base um arquivo JOSN para compor o grafo, portanto ele deve segui o seguinte padrão.
 
 ```JSON
