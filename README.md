@@ -10,7 +10,7 @@ Para poder executar o programa em sua máquina será necessário realizar o down
 A execução é a mesma tanto para windows quanto para linux. Na linha de comando será necessário passar 3 parâmetros
 
 ```bash
-> julia main.jl <arquivo.json> <verticeOrigen> <algoritmo>
+> julia main.jl <arquivo.json> <verticeOrigem> <algoritmo>
 ```
 
 Os parâmetros entre <> são parâmetros obrigatórios. 
