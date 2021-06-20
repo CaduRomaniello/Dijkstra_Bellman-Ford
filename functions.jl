@@ -13,10 +13,16 @@ function lerVertices(vertices, dados)
 end
 
 function LerDirecionadas(arestas, vertices, dados, contador)
-    if (length(dados["arestasDirecionadas"]) <= 0)
+
+    try
+        if (length(dados["arestasDirecionadas"]) <= 0)
+            return contador
+        end
+    catch
+        @warn "Key \"arestasDirecionadas\" not found"
         return contador
     end
-
+    
     for i = 1:length(dados["arestasDirecionadas"])
 
         nome = dados["arestasDirecionadas"][i]["nome"]
@@ -53,9 +59,15 @@ function LerDirecionadas(arestas, vertices, dados, contador)
 end
 
 function lerNaoDirecionadas(arestas, vertices, dados, contador)
-    if (length(dados["arestasNaoDirecionadas"]) <= 0)
+    try
+        if (length(dados["arestasNaoDirecionadas"]) <= 0)
+            return contador
+        end
+    catch
+        @warn "Key \"arestasNaoDirecionadas\" not found"
         return contador
     end
+    
     for i = 1:length(dados["arestasNaoDirecionadas"])
 
         nome = dados["arestasNaoDirecionadas"][i]["nome"]
