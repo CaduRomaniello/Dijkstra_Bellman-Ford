@@ -19,7 +19,7 @@ Os parâmetros entre <> são parâmetros obrigatórios.
 - **algoritmo** - este parâmetro deverá conter qual algoritmo se deseja executar. Atualmente ele possui duas opções: `dijkstra` ou `bellman_ford`.
 ---
 ## JSON
-O algoritmo usa como base um arquivo JOSN para compor o grafo, portanto ele deve segui o seguinte padrão.
+O algoritmo usa como base um arquivo JSON para compor o grafo, portanto ele deve segui o seguinte padrão.
 
 ```JSON
 {
