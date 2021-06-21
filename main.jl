@@ -11,7 +11,7 @@ function main(ARGS)
         println("Execução errada!")
         println("Para executar o programa digite: ")
         println("julia main.jl arquivo.json verticeOrigen, algoritmo")
-        println("Algoritmos disponiveis: [dijkstra, bellman_ford")
+        println("Algoritmos disponiveis: [dijkstra, bellman_ford]")
         return
     end
 
