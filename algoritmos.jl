@@ -69,7 +69,7 @@ function dijkstra(vertices::Array{Vertice, 1}, arestas::Array{Aresta, 1}, vertic
 
     end
 
-    imprimeResultado(vertices, arestas, dtTimeLine, rotTimeLine)
+    imprimeResultado(vertices, dtTimeLine, rotTimeLine, verticeOrigem)
 
 end
 
@@ -134,6 +134,6 @@ function bellman_ford(vertices::Array{Vertice, 1}, arestas::Array{Aresta, 1}, ve
         end
     end
 
-    imprimeResultado(vertices, arestas, dtTimeLine, rotTimeLine)
+    imprimeResultado(vertices, dtTimeLine, rotTimeLine, verticeOrigem)
 
 end

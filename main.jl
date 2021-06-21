@@ -4,13 +4,14 @@ include("functions.jl")
 
 using JSON
 using Printf
+using PrettyTables
 
 function main(ARGS)
     
     if (length(ARGS) != 3)
         println("Execução errada!")
         println("Para executar o programa digite: ")
-        println("julia main.jl arquivo.json verticeOrigen, algoritmo")
+        println("julia main.jl arquivo.json verticeOrigem, algoritmo")
         println("Algoritmos disponiveis: [dijkstra, bellman_ford]")
         return
     end
