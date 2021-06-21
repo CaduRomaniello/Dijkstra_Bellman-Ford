@@ -1,3 +1,5 @@
+using PrettyTables
+
 function lerVertices(vertices, dados)
 
     countVertices = 1
@@ -178,48 +180,66 @@ function encontrarVizinhos(vertice::Vertice)
     return vizinhos
 end
 
-function imprimeResultado(vertices, arestas, dtTimeLine, rotTimeLine)
-    
-    # Printa dt
-    @printf("DT    ")
-    for i = 1:length(vertices)
-        @printf("%3s ", vertices[i].nome)
-    end
-    println()
+function imprimeResultado(vertices, dtTimeLine, rotTimeLine, verticeOrigem)
 
-    for i = 1:length(dtTimeLine)
-        @printf("It %-2d ", i)
-        for j = 1:length(dtTimeLine[i])
-            if (dtTimeLine[i][j] <= typemax(Int64) && dtTimeLine[i][j] >= (typemax(Int64) - 15000000))
-                @printf("inf ")
+    local posOrigem = 0
+    for i = 1:length(vertices)
+        if (vertices[i].nome == verticeOrigem)
+            posOrigem = i
+            break
+        end
+    end
+
+    local columns = length(vertices) + 1
+    local rowsDT  = length(dtTimeLine)
+    local rowsROT = length(rotTimeLine)
+
+    local dataDT  = Array{Any, 2}(undef, rowsDT, columns)
+    local dataROT = Array{Any, 2}(undef, rowsROT, columns)
+    local header  = Array{Any, 1}(undef, columns)
+    local alignments = [:l]
+
+    header[1] = "DT"
+    for i = 2:columns
+        header[i] = vertices[i - 1].nome
+        push!(alignments, :c)
+    end
+
+    for i = 1:rowsDT
+        for j = 1:columns
+            if (j == 1)
+                dataDT[i, j] = "It $(i)"
+            elseif (j - 1 == posOrigem)
+                dataDT[i, j] = 0
             else
-                @printf("%3d ", dtTimeLine[i][j])
+                if (dtTimeLine[i][j - 1] <= typemax(Int64) && dtTimeLine[i][j - 1] >= (typemax(Int64) - 15e6))
+                    dataDT[i, j] = "inf"
+                else
+                    dataDT[i, j] = dtTimeLine[i][j - 1]
+                end
             end
         end
-        println()
     end
-    println()
-    
-    # Printa rot
-    println()
-    @printf("ROT   ")
-    for i = 1:length(vertices)
-        @printf("%2s ", vertices[i].nome)
-    end
-    println()
+    pretty_table(dataDT; header = header, alignment = alignments)
 
-    for i = 1:length(rotTimeLine)
-        @printf("It %-2d ", i)
-        for j = 1:length(rotTimeLine[i])
-            if (rotTimeLine[i][j] == 0)
-                @printf("%2s ", "0")
+
+    header[1] = "ROT"
+    for i = 1:rowsROT
+        for j = 1:columns
+            if (j == 1)
+                dataROT[i, j] = "It $(i)"
+            elseif (j - 1 == posOrigem)
+                dataROT[i, j] = verticeOrigem
             else
-                @printf("%2s ", vertices[rotTimeLine[i][j]].nome)
+                if (rotTimeLine[i][j - 1] == 0)
+                    dataROT[i, j] = 0
+                else
+                    dataROT[i, j] = vertices[rotTimeLine[i][j - 1]].nome
+                end
             end
         end
-        println()
     end
-    println()
+    pretty_table(dataROT; header = header, alignment = alignments)
 
 end
 
@@ -256,95 +276,76 @@ function encontraFechoTransitivo(vertices)
 
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# function loopDFS(vertice, vet, pos, vertices)
+function loopDFS(vertice, vet, pos, vertices)
     
-#     vertice.visitado = true
-#     push!(vet[pos], vertice.id)
-#     for i = 1:length(vertice.arestas)
-#         vizinho = 0
+    vertice.visitado = true
+    push!(vet[pos], vertice.id)
+    for i = 1:length(vertice.arestas)
+        vizinho = 0
 
-#         if (typeof(vertice.arestas[i]) == typeof(Direcionada()))
-#             vizinho = vertice.arestas[i].destino
-#         else
-#             id = vertice.id
-#             if (id == vertice.arestas[i].vertice1)
-#                 vizinho = vertice.arestas[i].vertice2
-#             else
-#                 vizinho = vertice.arestas[i].vertice1
-#             end
-#         end
+        if (typeof(vertice.arestas[i]) == typeof(Direcionada()))
+            vizinho = vertice.arestas[i].destino
+        else
+            id = vertice.id
+            if (id == vertice.arestas[i].vertice1)
+                vizinho = vertice.arestas[i].vertice2
+            else
+                vizinho = vertice.arestas[i].vertice1
+            end
+        end
 
-#         if (vertices[vizinho].visitado == false)
-#             vertice.arestas[i].visitado = true
-#             loopDFS(vertices[vizinho], vet, pos, vertices)
-#         else
-#             if (vertice.arestas[i].visitado == false)
-#                 vertice.arestas[i].visitado = true
-#             end
-#         end
+        if (vertices[vizinho].visitado == false)
+            vertice.arestas[i].visitado = true
+            loopDFS(vertices[vizinho], vet, pos, vertices)
+        else
+            if (vertice.arestas[i].visitado == false)
+                vertice.arestas[i].visitado = true
+            end
+        end
 
-#     end
+    end
 
-# end
+end
 
-# function dfs(vertices, arestas)
+function dfs(vertices, arestas)
     
-#     vet= []
+    vet= []
 
-#     for i = 1:length(vertices)
-#         push!(vet, [])
-#         loopDFS(vertices[i], vet, i, vertices)
+    for i = 1:length(vertices)
+        push!(vet, [])
+        loopDFS(vertices[i], vet, i, vertices)
 
-#         for j = 1:length(vertices)
-#             vertices[j].visitado = false
-#         end
-#         for j = 1:length(arestas)
-#             arestas[j].visitado = false
-#         end
-#         # for i = 1:length(vertices)
-#         # end
-#     end
+        for j = 1:length(vertices)
+            vertices[j].visitado = false
+        end
+        for j = 1:length(arestas)
+            arestas[j].visitado = false
+        end
+        # for i = 1:length(vertices)
+        # end
+    end
 
-#     for i = 1:length(vet)
-#         deleteat!(vet[i], 1)
-#     end
+    for i = 1:length(vet)
+        deleteat!(vet[i], 1)
+    end
 
 
-#     return vet
+    return vet
 
-# end
+end
 
-# function inverteDFS(vetDFS)
+function inverteDFS(vetDFS)
 
-#     retorno = []
+    retorno = []
 
-#     for i = 1:length(vetDFS)
-#         push!(retorno, [])
-#     end
+    for i = 1:length(vetDFS)
+        push!(retorno, [])
+    end
 
-#     for i = 1:length(vetDFS)
-#         for j = 1:length(vetDFS[i])
-#             push!(retorno[vetDFS[i][j]], i)
-#         end
-#     end
+    for i = 1:length(vetDFS)
+        for j = 1:length(vetDFS[i])
+            push!(retorno[vetDFS[i][j]], i)
+        end
+    end
     
-# end
+end
