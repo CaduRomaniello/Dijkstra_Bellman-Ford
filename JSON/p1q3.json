@@ -1,0 +1,22 @@
+{
+    "vertices": [
+        {"nome": "1"},
+        {"nome": "2"},
+        {"nome": "3"},
+        {"nome": "4"},
+        {"nome": "5"},
+        {"nome": "6"}
+    ],
+    "arestasNaoDirecionadas": [], 
+    "arestasDirecionadas": [
+        {"nome": "p1", "origem": "1", "destino": "2", "peso": 1},
+        {"nome": "p2", "origem": "3", "destino": "1", "peso": 27},
+        {"nome": "p3", "origem": "2", "destino": "3", "peso": 1},
+        {"nome": "p4", "origem": "2", "destino": "4", "peso": 12},
+        {"nome": "p5", "origem": "2", "destino": "5", "peso": 5},
+        {"nome": "p6", "origem": "5", "destino": "4", "peso": -3},
+        {"nome": "p7", "origem": "6", "destino": "5", "peso": 9},
+        {"nome": "p8", "origem": "4", "destino": "6", "peso": 2},
+        {"nome": "p9", "origem": "3", "destino": "4", "peso": 18}
+    ]
+}
